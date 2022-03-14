@@ -117,6 +117,7 @@ EXPECTED_GAMES = frozenset([
     "trade_comm",
     "turn_based_simultaneous_game",
     "ultimate_tic_tac_toe",
+    "xiangqi",
     "y",
 ])
 

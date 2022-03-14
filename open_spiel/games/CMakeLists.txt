@@ -144,6 +144,12 @@ set(GAME_SOURCES
   trade_comm.h
   ultimate_tic_tac_toe.h
   ultimate_tic_tac_toe.cc
+  xiangqi.cc
+  xiangqi.h
+  xiangqi/xiangqi_board.cc
+  xiangqi/xiangqi_board.h
+  xiangqi/xiangqi_common.cc
+  xiangqi/xiangqi_common.h
   y.cc
   y.h
 )
@@ -509,6 +515,10 @@ if (${OPEN_SPIEL_BUILD_WITH_ACPC})
   add_test(universal_poker_test universal_poker_test
            --subgames_data_dir=${CMAKE_CURRENT_SOURCE_DIR}/universal_poker/endgames)
 endif()
+
+add_executable(xiangqi_test xiangqi_test.cc ${OPEN_SPIEL_OBJECTS}
+               $<TARGET_OBJECTS:tests>)
+add_test(xiangqi_test xiangqi_test)
 
 add_executable(y_test y_test.cc ${OPEN_SPIEL_OBJECTS}
                $<TARGET_OBJECTS:tests>)
