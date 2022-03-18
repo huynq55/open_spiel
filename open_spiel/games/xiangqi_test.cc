@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "open_spiel/games/xiangqi.h"
+
+#include "open_spiel/games/xiangqi/xiangqi_board.h"
 #include "open_spiel/spiel.h"
 #include "open_spiel/tests/basic_tests.h"
 
@@ -27,8 +30,18 @@ void BasicXiangqiTests() {
   testing::RandomSimTest(*LoadGame("xiangqi"), 100);
 }
 
+void SquareToStringTest() {
+  Square s = {0, 0};
+  SPIEL_CHECK_EQ(SquareToString(s), "a0");
+  s = {1, 1};
+  SPIEL_CHECK_EQ(SquareToString(s), "b1");
+}
+
 }  // namespace
 }  // namespace xiangqi
 }  // namespace open_spiel
 
-int main(int argc, char** argv) { open_spiel::xiangqi::BasicXiangqiTests(); }
+int main(int argc, char** argv) {
+  open_spiel::xiangqi::BasicXiangqiTests();
+  open_spiel::xiangqi::SquareToStringTest();
+}
