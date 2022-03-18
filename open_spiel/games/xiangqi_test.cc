@@ -37,6 +37,11 @@ void SquareToStringTest() {
   SPIEL_CHECK_EQ(SquareToString(s), "b1");
 }
 
+void ColorToStringTest() {
+  Color c = {Color::kBlack};
+  SPIEL_CHECK_EQ(ColorToString(c), "black");
+}
+
 }  // namespace
 }  // namespace xiangqi
 }  // namespace open_spiel
@@ -44,4 +49,5 @@ void SquareToStringTest() {
 int main(int argc, char** argv) {
   open_spiel::xiangqi::BasicXiangqiTests();
   open_spiel::xiangqi::SquareToStringTest();
+  open_spiel::xiangqi::ColorToStringTest();
 }
